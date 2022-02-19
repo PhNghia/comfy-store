@@ -45,7 +45,7 @@ function toggleActiveModal() {
     modal.classList.toggle('activeModal')
 }
 
-function handlerBuyProduct (followers, product) {
+function handlerBuyProduct (followers, product, number) {
     // handler buy product by button buy
     if (followers) {
         const buyBtns = document.querySelectorAll('.product-cart-btn.product-icon')
@@ -65,7 +65,7 @@ function handlerBuyProduct (followers, product) {
 
     if (product) {
         const { image, name, price } = product.fields
-        addProductIntoStoreModalCart(product.id, image[0].url, name, (price / 100).toFixed(2))
+        addProductIntoStoreModalCart(product.id, image[0].url, name, (price / 100).toFixed(2), number)
         updateStoreInfo()
         handlerChangeNumberProduct()
         toggleActiveModal()
@@ -114,7 +114,7 @@ function getDataFromProductByIdParent (followers, id) {
     return { url: image[0].url, name, price: (price / 100).toFixed(2) }
 }
 
-function addProductIntoStoreModalCart (id, url, name, price) {
+function addProductIntoStoreModalCart (id, url, name, price, number = 1) {
     const modalStoreCart = document.querySelector('.modal-store-cart')
     const carts = modalStoreCart.querySelectorAll('article.modal-cart')
     let isNew = true
@@ -122,7 +122,7 @@ function addProductIntoStoreModalCart (id, url, name, price) {
         Array.from(carts).forEach(cart => {
             if (cart.getAttribute('id') == id) {
                 isNew = false
-                increaseProduct(cart)
+                increaseProduct(cart, number)
             }
         })
     }
@@ -141,23 +141,23 @@ function addProductIntoStoreModalCart (id, url, name, price) {
                 <button class="modal-cart-btn modal-cart-btn-increase">
                     <i class="fas fa-chevron-up"></i>
                 </button>
-                <p class="modal-cart-number">1</p> 
+                <p class="modal-cart-number">${number}</p> 
                 <button class="modal-cart-btn modal-cart-btn-decrease">
                     <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
         `
         modalStoreCart.append(article)
-        addProductToLocalStorage(id, url, name, price)
+        addProductToLocalStorage(id, url, name, price, number)
     }
 }
 
-function increaseProduct (cart) {
+function increaseProduct (cart, number = 1) {
     const numberCarts = cart.querySelector('.modal-cart-number')
-    let number = Number(numberCarts.textContent)
-    number++
-    numberCarts.textContent = number
-    updateNumberProductToLocalStorage(cart.getAttribute('id'), number)
+    let numberBefore = Number(numberCarts.textContent)
+    numberBefore += number
+    numberCarts.textContent = numberBefore
+    updateNumberProductToLocalStorage(cart.getAttribute('id'), numberBefore)
 }
 
 function decreaseProduct (cart) {
@@ -199,9 +199,9 @@ function getLocalStorage () {
     return localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : []
 }
 
-function addProductToLocalStorage (id, url, name, price) {
+function addProductToLocalStorage (id, url, name, price, number = 1) {
     const list = getLocalStorage()
-    const article = { id, url, name, price, number: 1 }
+    const article = { id, url, name, price, number }
     list.push(article)
     localStorage.setItem('list', JSON.stringify(list))
 }

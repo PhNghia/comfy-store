@@ -38,6 +38,11 @@ function renderProductByModal (product){
                     return `<span class="modal-product-color" style="background-color: ${color}"></span>`
                 }).join('')}
                 <p class="modal-product-description">Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge</p>
+                <div class="modal-product-quantity">
+                    <button>&#8722;</button>
+                    <span>1</span>
+                    <button class="modal-product-increase-btn">&#43;</button>
+                </div>
                 <button class="modal-product-add-button">Add to cart</button>
             </div>
         </div>
@@ -51,10 +56,28 @@ function renderProductByModal (product){
     closeButton.onclick = () => {
         modal.remove()
     }
+    // increase or decrease number product
+    changeNumberProduct()
     // add product
     const addButtonCart = document.querySelector('.modal-product-add-button')
     addButtonCart.onclick = () => {
-        handlerBuyProduct(null, product)
+        const numberProduct = Number(document.querySelector('.modal-product-quantity span').innerText)
+        handlerBuyProduct(null, product, numberProduct)
         modal.remove()
     }
+}
+
+function changeNumberProduct () {
+    const buttonsChangeNumber = document.querySelectorAll('.modal-product-quantity button')
+    const numberProductContainer = document.querySelector('.modal-product-quantity span') 
+    buttonsChangeNumber.forEach(button => {
+        button.onclick = () => {
+            if (button.matches('.modal-product-increase-btn')) {
+                numberProductContainer.innerText = Number(numberProductContainer.innerText) + 1
+                return
+            }
+            if (numberProductContainer.innerText == '1') return
+            numberProductContainer.innerText = Number(numberProductContainer.innerText) - 1
+        }
+    })
 }
