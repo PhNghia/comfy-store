@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>  
+    <!-- navbar -->
+    <div class="navbar grid">
+        <!-- link -->
+        <ul class="navbar-list-link">
+            <li><a href="home.html" style="color: #102a42;">Home</a></li>
+            <li><a href="products.html" style="color: #102a42;">Products</a></li>
+            <li><a href="about.html" style="color: #102a42;">About</a></li>
+        </ul>
+        <!-- logo -->
+        <img src="https://vanilla-js-store.netlify.app/images/logo-black.svg" alt="LOGO STORE" class="logo-navbar">
+        <!-- cart icon -->
+        <div class="toggle-container">
+            <button class="toggle-cart" style="color: #102a42;">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-item-count">0</span>
+        </div>
+    </div>
+    
+    <!-- link title -->
+    <div class="link-title">
+        <h3 class="text-link-title grid">Home / Products</h3>
+    </div>
+
+    <!-- loading -->
+    <div class="store-loading">
+        <h3>Loading...</h3>
+    </div>
+
+    <!-- store container  -->
+    <div class="store-container grid">
+        <!-- some category to choice -->
+        <div class="store-category">
+            <div class="form-input">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="form-category">
+                <h5 class="form-category-title">Company</h5>
+                <ul class="form-type-list">
+                    <!-- <li>All</li>
+                    <li>Ikea</li>
+                    <li>Marcos</li>
+                    <li>Caressa</li>
+                    <li>Liddy</li> -->
+                </ul>
+            </div>
+            <div class="form-range">
+                <h5 class="form-category-title">Price</h5>
+                <input type="range" min="0" max="100" value="100">
+                <div class="form-range-value">
+                    Value: $
+                    <span>80</span>
+                </div>
+            </div>
+        </div>
+        <!-- view products  -->
+        <div class="store-products">
+            <!-- <article class="product grid-col">
+                <div class="product-container">
+                    <img src="https://dl.airtable.com/.attachmentThumbnails/d86e13eec1b200e2b21282b99a9382be/6d92321b" alt="high-back bench">
+                    <div class="product-icons">
+                        <a href="product.html?id=rec43w3ipXvP28vog" class="product-icon">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <button class="product-cart-btn product-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <footer>
+                    <p class="product-name">High-Back Bend</p>
+                    <h4 class="product-cost">$9.99</h4>
+                </footer>
+            </article> -->
+        </div>
+    </div>
+    <script type="module" src="products.js"></script>
+</body>
+</html>

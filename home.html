@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar grid">
+        <!-- link -->
+        <ul class="navbar-list-link">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <!-- logo -->
+        <img src="https://vanilla-js-store.netlify.app/images/logo-white.svg" alt="LOGO STORE" class="logo-navbar">
+        <!-- cart icon -->
+        <div class="toggle-container">
+            <button class="toggle-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-item-count">0</span>
+        </div>
+    </div>
+    <!-- hero -->
+    <section class="hero">
+        <div class="hero-container grid">
+            <h1 class="text-slanted">Rest, Relax, Unwind</h1>
+            <h3>Embrace your choices - we do</h3>
+            <a href="products.html" class="hero-button">Show now</a>
+        </div>
+    </section>
+    <!-- introduce -->
+    <div class="introduction grid">
+        <h2 class="introduction-title">
+            <span>/</span>
+            Featured
+        </h2>
+        
+        <div class="introduction-content">
+            <div class="introduction-list">
+                <h3>Loading...</h3>
+                <!-- <article class="product grid-col">
+                    <div class="product-container">
+                        <img src="https://dl.airtable.com/.attachmentThumbnails/d86e13eec1b200e2b21282b99a9382be/6d92321b" alt="high-back bench">
+                        <div class="product-icons">
+                            <a href="product.html?id=rec43w3ipXvP28vog" class="product-icon">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <button class="product-cart-btn product-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <footer>
+                        <p class="product-name">High-Back Bend</p>
+                        <h4 class="product-cost">$9.99</h4>
+                    </footer>
+                </article> -->
+            </div>
+        </div>
+        <a href="products.html" class="product-view-btn">All Products</a>
+    </div>
+
+    <!-- <div class="modal">
+        <div class="modal-container">
+            <div class="close-modal-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <h3 class="modal-title">Your Bag</h3>
+            <div class="modal-store-cart">
+
+            </div>
+            <footer>
+                <div class="modal-total-price">
+                    Total: $
+                    <span>0.00</span>
+                </div>
+                <button class="modal-checkout">Checkout</button>
+            </footer>
+        </div>
+    </div> -->
+
+    <!-- <div class="modal-product">
+        <div class="modal-product-container">
+            <div class="modal-product-close">&times</div>
+            <img src="https://dl.airtable.com/.attachmentThumbnails/ecc03714fd1ff14f50d98834615da483/30525671" alt="">
+            <div class="modal-product-content">
+                <h5 class="modal-product-name">Albany Table</h5>
+                <p class="modal-product-company">by Macos</p>
+                <p class="modal-product-cost">$99.99</p>
+                <span class="modal-product-color">1</span>
+                <p class="modal-product-description">Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge</p>
+                <button class="modal-product-add-button">Add to cart</button>
+            </div>
+        </div>
+    </div> -->
+    <script type="module" src="home.js"></script>
+</body>
+</html>
