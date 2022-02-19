@@ -1,12 +1,13 @@
 import handlerBuyProduct from './modal.js'
 import viewProduct from './viewProducts.js'
+import animationLoading from './animationLoadingWait.js'
 const allProductsUrl = 'https://course-api.com/javascript-store-products'
 
 
 const init = async () => {
-    const follwers = await fetchFollowers()
     const introductionListLoadingHeading = document.querySelector('.introduction-list h3')
-    introductionListLoadingHeading.style.display = 'none'
+    animationLoading(introductionListLoadingHeading)
+    const follwers = await fetchFollowers()
     await displayProductsIntroduction(follwers)
     viewProduct(follwers)
     handlerSlideModeProducts()
