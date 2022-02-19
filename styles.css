@@ -704,6 +704,7 @@ body {
     font-size: 25px;
     color: hsl(210, 31%, 80%);
     text-transform: uppercase;
+    font-family: 'Kaushan Script', cursive;
     letter-spacing: 2px;
     margin: 0;
 }
