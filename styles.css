@@ -284,6 +284,7 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 4px;
+    cursor: default;
 }
 
 .product-container.type-store img {

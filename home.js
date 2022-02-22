@@ -28,7 +28,7 @@ async function displayProductsIntroduction (followers) {
         if (!newFollowersToIntroduction.includes(followers[random])) {
             newFollowersToIntroduction.push(followers[random])
         }
-        if (newFollowersToIntroduction.length >= 9) break
+        if (newFollowersToIntroduction.length >= 8) break
     }
 
     introductionListContainer.innerHTML = newFollowersToIntroduction.map(product => {
@@ -77,13 +77,13 @@ function handlerSlideModeProducts () {
         button.onclick = (e) => {
             if (e.target.matches('.next-btn')) {
                 introductionListContainer.scrollBy({ 
-                    left: width + margin, behavior: 'smooth' 
+                    left: (width + margin) * 2, behavior: 'smooth'
                 })
                 return
             }
 
             introductionListContainer.scrollBy({ 
-                left: -(width + margin), behavior: 'smooth' 
+                left: -(width + margin) * 2, behavior: 'smooth'
             })
         }
     })
@@ -103,15 +103,18 @@ function makeEffectScrollByMouse () {
                 // run from right to left
                 if (x - e.x >= 100 && isMouseDown) {
                     endPoint++
-                    introductionListContainer.scrollLeft += 15
+                    introductionListContainer.scrollLeft += 18
                 }
                 // run from left to right
                 if (-(x - e.x) >= 100 && isMouseDown) {
                     endPoint++
-                    introductionListContainer.scrollLeft -= 15
+                    introductionListContainer.scrollLeft -= 18
                 }
                 // escape scroll effect
                 if (endPoint >= 20) isMouseDown = false
+            }
+            introductionListContainer.onmouseleave = () => {
+                isMouseDown = false
             }
         }
     }
