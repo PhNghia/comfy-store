@@ -68,13 +68,10 @@ async function displayProductsIntroduction (followers) {
 function handlerSlideModeProducts () {
     const buttons = document.querySelectorAll('.introduction-slide-btn')
     const introductionListContainer = document.querySelector('.introduction-list')
-    const articles = document.querySelectorAll('.introduction-list article')
-    let width
+    let width = $('.introduction-list article:last-child').css('width')
     let margin = $('.introduction-list article:last-child').css('marginLeft')
+    width =  Number(width.slice(0, width.indexOf('px')))
     margin = Number(margin.slice(0, margin.indexOf('px')))
-    articles.forEach(article => {
-        width = article.offsetWidth
-    })
 
     buttons.forEach(button => {
         button.onclick = (e) => {

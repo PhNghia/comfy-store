@@ -179,6 +179,7 @@ body {
 }
 
 .introduction-content {
+    width: 100%;
     position: relative;
 }
 
@@ -254,12 +255,16 @@ body {
     right: -30px;
 }
 
+.introduction-list {
+    width: 100%;
+}
+
 .introduction-list > article {
-    min-width: 32.2%;
+    min-width: 24%;
 }
 
 .introduction-list > article ~  article {
-    margin-left: 20px;
+    margin-left: 1%;
 }
 
 .introduction-list h3 {
