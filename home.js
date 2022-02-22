@@ -70,8 +70,8 @@ function handlerSlideModeProducts () {
     const introductionListContainer = document.querySelector('.introduction-list')
     const articles = document.querySelectorAll('.introduction-list article')
     let width
-    let margin = 20// margin css style of article
-
+    let margin = $('.introduction-list article:last-child').css('marginLeft')
+    margin = Number(margin.slice(0, margin.indexOf('px')))
     articles.forEach(article => {
         width = article.offsetWidth
     })
