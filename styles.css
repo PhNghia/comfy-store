@@ -807,6 +807,14 @@ body {
     .grid {
         width: 800px;
         max-width: 100%;
+    } 
+
+    .text-slanted {
+        font-size: 55px;
+    }
+
+    .hero-container h3 {
+        font-size: 40px;
     }
 }
 
@@ -920,6 +928,14 @@ body {
     .introduction-list > article {
         min-width: 49%;
     }
+
+    .text-slanted {
+        font-size: 50px;
+    }
+
+    .hero-container h3 {
+        font-size: 40px;
+    }
 }
 
 /* mobile */
@@ -949,6 +965,15 @@ body {
 
     .modal-container {
         width: 100% ;
+    }
+    
+    .text-slanted {
+        font-size: 40px;
+        line-height: 1.5;
+    }
+
+    .hero-container h3 {
+        font-size: 30px;
     }
 }
 
