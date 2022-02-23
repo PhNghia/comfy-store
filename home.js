@@ -68,22 +68,18 @@ async function displayProductsIntroduction (followers) {
 function handlerSlideModeProducts () {
     const buttons = document.querySelectorAll('.introduction-slide-btn')
     const introductionListContainer = document.querySelector('.introduction-list')
-    let width = $('.introduction-list article:last-child').css('width')
-    let margin = $('.introduction-list article:last-child').css('marginLeft')
-    width =  Number(width.slice(0, width.indexOf('px')))
-    margin = Number(margin.slice(0, margin.indexOf('px')))
-
+    let range = $('.introduction-list article:last-child').outerWidth(true)
     buttons.forEach(button => {
         button.onclick = (e) => {
             if (e.target.matches('.next-btn')) {
                 introductionListContainer.scrollBy({ 
-                    left: (width + margin) * 2, behavior: 'smooth'
+                    left: range * 2, behavior: 'smooth'
                 })
                 return
             }
 
             introductionListContainer.scrollBy({ 
-                left: -(width + margin) * 2, behavior: 'smooth'
+                left: -range * 2, behavior: 'smooth'
             })
         }
     })
