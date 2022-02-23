@@ -827,6 +827,7 @@ body {
         z-index: 2;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
     }
 
     .list-link-menu-mobile.menu-open ~ .navbar-list-link {
@@ -864,14 +865,15 @@ body {
         position: absolute;
         display: none;
         flex-direction: column;
-        transform: translate(0, 30px);
+        transform: translate(-10px, 30px);
         transition: all .3s linear; 
         background-color: hsl(0, 0%, 100%);
         border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     .navbar-list-link li {
-        padding: 10px 0px;
+        padding: 10px;
     }
 
     .product-icons {
