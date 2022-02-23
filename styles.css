@@ -830,7 +830,7 @@ body {
     }
 
     .list-link-menu-mobile.menu-open ~ .navbar-list-link {
-        opacity: 1;
+        display: flex;
     }
 
     .list-link-menu-mobile.menu-open span:nth-child(1) {
@@ -862,10 +862,9 @@ body {
 
     .navbar-list-link {
         position: absolute;
-        display: flex;
+        display: none;
         flex-direction: column;
         transform: translate(0, 30px);
-        opacity: 0;
         transition: all .3s linear; 
         background-color: hsl(0, 0%, 100%);
         border-radius: 6px;
