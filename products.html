@@ -13,11 +13,19 @@
     <!-- navbar -->
     <div class="navbar grid">
         <!-- link -->
-        <ul class="navbar-list-link">
-            <li><a href="home.html" style="color: #102a42;">Home</a></li>
-            <li><a href="products.html" style="color: #102a42;">Products</a></li>
-            <li><a href="about.html" style="color: #102a42;">About</a></li>
-        </ul>
+        <div class="list-link-container">
+            <div class="list-link-menu-mobile">
+                <span style="background-color: #102a42;"></span>
+                <span style="background-color: #102a42;"></span>
+                <span style="background-color: #102a42;"></span>
+            </div>
+            <ul class="navbar-list-link">
+                <li><a href="home.html" style="color: #102a42;">Home</a></li>
+                <li><a href="products.html" style="color: #102a42;">Products</a></li>
+                <li><a href="about.html" style="color: #102a42;">About</a></li>
+            </ul>
+        </div>
+        
         <!-- logo -->
         <img src="https://vanilla-js-store.netlify.app/images/logo-black.svg" alt="LOGO STORE" class="logo-navbar">
         <!-- cart icon -->
@@ -31,7 +39,9 @@
     
     <!-- link title -->
     <div class="link-title">
-        <h3 class="text-link-title grid">Home / Products</h3>
+        <div class="grid">
+            <h3 class="text-link-title grid">Home / Products</h3>
+        </div>
     </div>
 
     <!-- loading -->

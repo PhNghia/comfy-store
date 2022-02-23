@@ -1,12 +1,14 @@
 import handlerBuyProduct from './modal.js'
 import viewProduct from './viewProducts.js'
 import animationLoading from './animationLoadingWait.js'
+import animationMenuPage from './animationMenuPage.js'
 
 const allProductsUrl = 'https://course-api.com/javascript-store-products'
 let followersElement
 let activeCompany = 'all'
 
 const init = async () => {
+    animationMenuPage()
     const storeLoadingContainer = document.querySelector('.store-loading h3')
     animationLoading(storeLoadingContainer)
     const followers = await fetchFollowers()

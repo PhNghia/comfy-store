@@ -1,16 +1,19 @@
 import handlerBuyProduct from './modal.js'
 import viewProduct from './viewProducts.js'
 import animationLoading from './animationLoadingWait.js'
+import animationMenuPage from './animationMenuPage.js'
+
 const allProductsUrl = 'https://course-api.com/javascript-store-products'
 
 
 const init = async () => {
+    animationMenuPage()
     const introductionListLoadingHeading = document.querySelector('.introduction-list h3')
     animationLoading(introductionListLoadingHeading)
     const follwers = await fetchFollowers()
     await displayProductsIntroduction(follwers)
     viewProduct(follwers)
-    handlerSlideModeProducts()
+    handlerMouseOrHandToWeb()
     handlerBuyProduct(follwers)
 }
 
@@ -65,6 +68,10 @@ async function displayProductsIntroduction (followers) {
     return 
 }
 
+function handlerMouseOrHandToWeb () {
+    handlerSlideModeProducts()
+}
+
 function handlerSlideModeProducts () {
     const buttons = document.querySelectorAll('.introduction-slide-btn')
     const introductionListContainer = document.querySelector('.introduction-list')
@@ -73,13 +80,13 @@ function handlerSlideModeProducts () {
         button.onclick = (e) => {
             if (e.target.matches('.next-btn')) {
                 introductionListContainer.scrollBy({ 
-                    left: range * 2, behavior: 'smooth'
+                    left: range, behavior: 'smooth'
                 })
                 return
             }
 
             introductionListContainer.scrollBy({ 
-                left: -range * 2, behavior: 'smooth'
+                left: -range, behavior: 'smooth'
             })
         }
     })
