@@ -90,10 +90,10 @@ function handlerSlideModeProducts () {
             })
         }
     })
-    makeEffectScrollByMouse()
+    makeEffectScrollByMouse(range)
 }
 
-function makeEffectScrollByMouse () {
+function makeEffectScrollByMouse (range) {
     const introductionListContainer = document.querySelector('.introduction-list')
     let isMouseDown = false
     introductionListContainer.onmousedown = (e) => {
@@ -104,22 +104,23 @@ function makeEffectScrollByMouse () {
             introductionListContainer.classList.add('mouseDown')
             introductionListContainer.onmousemove = (e) => {
                 // run from right to left
-                if (x - e.x >= 100 && isMouseDown) {
+                if (x - e.x >= 10 && isMouseDown) {
                     endPoint++
-                    introductionListContainer.scrollLeft += 18
+                    introductionListContainer.scrollLeft += range / 20
                 }
                 // run from left to right
-                if (-(x - e.x) >= 100 && isMouseDown) {
+                if (-(x - e.x) >= 10 && isMouseDown) {
                     endPoint++
-                    introductionListContainer.scrollLeft -= 18
+                    introductionListContainer.scrollLeft -= range / 20
                 }
                 // escape scroll effect
-                if (endPoint >= 20) isMouseDown = false
-            }
-            introductionListContainer.onmouseleave = () => {
-                isMouseDown = false
+                if (endPoint > 20) isMouseDown = false
             }
         }
+    }
+
+    introductionListContainer.onmouseleave = () => {
+        isMouseDown = false
     }
 
     introductionListContainer.onmouseup = () => {
@@ -127,5 +128,4 @@ function makeEffectScrollByMouse () {
         introductionListContainer.classList.remove('mouseDown')
     }
 }
-
 window.addEventListener('load', init)

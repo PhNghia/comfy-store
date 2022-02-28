@@ -18,8 +18,7 @@ body {
 }
 
 .grid {
-    width: 75em;
-    max-width: 100%;
+    width: 1200px;
 }
 
 .grid-row {
@@ -188,7 +187,9 @@ body {
 .introduction-list {
     width: 100%;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
     margin: 50px 0 20px;
     transition: background-color .3s linear;
     cursor: grab;
@@ -415,6 +416,7 @@ body {
 
 .store-products {
     width: 80%;
+    height: 50vh;
     display: grid;
     grid-column-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -806,7 +808,6 @@ body {
 @media screen and (max-width: 64.0625em) and (min-width: 56.34375em) {
     .grid {
         width: 800px;
-        max-width: 100%;
     } 
 
     .text-slanted {
@@ -906,7 +907,6 @@ body {
 @media screen and (min-width: 37.53125em) and (max-width: 56.25em) {
     .grid {
         width: 680px;
-        max-width: 100%;
     }
 
     .store-container {
@@ -943,7 +943,6 @@ body {
 @media screen and (max-width: 37.5em) {
     .grid {
         width: 300px;
-        max-width: 100%;
     }
 
     .introduction-list > article {
