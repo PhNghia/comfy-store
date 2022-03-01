@@ -19,6 +19,7 @@ body {
 
 .grid {
     width: 1200px;
+    max-width: 100%;
 }
 
 .grid-row {
@@ -808,6 +809,7 @@ body {
 @media screen and (max-width: 64.0625em) and (min-width: 56.34375em) {
     .grid {
         width: 800px;
+        max-width: 100%;
     } 
 
     .text-slanted {
@@ -907,6 +909,7 @@ body {
 @media screen and (min-width: 37.53125em) and (max-width: 56.25em) {
     .grid {
         width: 680px;
+        max-width: 100%;
     }
 
     .store-container {
@@ -943,6 +946,7 @@ body {
 @media screen and (max-width: 37.5em) {
     .grid {
         width: 300px;
+        max-width: 100%;
     }
 
     .introduction-list > article {
